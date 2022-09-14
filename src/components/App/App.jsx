@@ -1,26 +1,34 @@
 import { useSelector, useDispatch } from 'react-redux';
-
+import { useEffect } from 'react';
 import css from './App.module.css';
 
 import Form from '../Form/Form';
 import Filter from '../Filter/Filter';
 import ContactList from '../ContactList/ContactList';
 
-import { addContact, removeContact } from 'redux/contactItems/items-actions';
+// import { addContact, removeContact } from 'redux/contactItems/items-actions';
+import {
+  fetchContacts,
+  addContact,
+  removeContact,
+} from 'redux/contactItems/contacts-operations';
+
 import { setFilter } from 'redux/filter/filter-actions';
 
 const App = () => {
   const dispatch = useDispatch();
-  const newContacts = useSelector(store => store.items);
+  const newContacts = useSelector(store => store.items.items);
   const filter = useSelector(store => store.filter);
 
-  const onAddContact = payload => {
-    if (newContacts.find(contact => contact.name === payload.name)) {
-      return alert(`${payload.name} is already in contact list`);
-    }
-    const action = addContact(payload);
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
-    dispatch(action);
+  const onAddContact = payload => {
+    // if (newContacts.find(contact => contact.name === payload.name)) {
+    //   return alert(`${payload.name} is already in contact list`);
+    // }
+    dispatch(addContact(payload));
   };
 
   const onRemoveContact = payload => {
