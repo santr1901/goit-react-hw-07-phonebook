@@ -45,7 +45,7 @@ const App = () => {
       contact.name.toLocaleLowerCase().includes(normalizeFilter)
     );
   };
-  console.log(newContacts);
+
   return (
     <div className={css.phonebook}>
       <h1>Phonebook</h1>
