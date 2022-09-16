@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+// import { store } from 'redux/store';
 import {
   fetchContacts,
   addContact,
@@ -38,6 +39,18 @@ const contactsSlice = createSlice({
       store.items.push(payload);
     },
     [addContact.rejected]: (store, { payload }) => {
+      store.loading = false;
+      store.error = payload;
+    },
+    [removeContact.pending]: store => {
+      store.loading = true;
+      store.error = null;
+    },
+    [removeContact.fulfilled]: (store, { payload }) => {
+      store.loading = false;
+      store.items = store.items.filter(item => item.id !== payload);
+    },
+    [removeContact.rejected]: (store, { payload }) => {
       store.loading = false;
       store.error = payload;
     },
