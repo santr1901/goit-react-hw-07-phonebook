@@ -1,31 +1,31 @@
-import { createAction } from '@reduxjs/toolkit';
+// import { createAction } from '@reduxjs/toolkit';
 
-export const fetchContactsLoading = createAction('contacts/fetch/loading');
-export const fetchContactsSuccess = createAction('contacts/fetch/success');
-export const fetchContactsError = createAction('contacts/fetch/error');
+// export const fetchContactsLoading = createAction('contacts/fetch/loading');
+// export const fetchContactsSuccess = createAction('contacts/fetch/success');
+// export const fetchContactsError = createAction('contacts/fetch/error');
 
-export const addContactLoading = createAction('contacts/add/loading');
-export const addContactSuccess = createAction('contacts/add/success');
-export const addContactError = createAction('contacts/add/error');
+// export const addContactLoading = createAction('contacts/add/loading');
+// export const addContactSuccess = createAction('contacts/add/success');
+// export const addContactError = createAction('contacts/add/error');
 
-export const removeContactLoading = createAction('contacts/remove/loading');
-export const removeContactSuccess = createAction('contacts/remove/success');
-export const removeContactError = createAction('contacts/remove/error');
+// export const removeContactLoading = createAction('contacts/remove/loading');
+// export const removeContactSuccess = createAction('contacts/remove/success');
+// export const removeContactError = createAction('contacts/remove/error');
 
-const actions = {
-  fetchContactsLoading,
-  fetchContactsSuccess,
-  fetchContactsError,
-  addContactLoading,
-  addContactSuccess,
-  addContactError,
-  removeContactLoading,
-  removeContactSuccess,
-  removeContactError,
-};
+// const actions = {
+//   fetchContactsLoading,
+//   fetchContactsSuccess,
+//   fetchContactsError,
+//   addContactLoading,
+//   addContactSuccess,
+//   addContactError,
+//   removeContactLoading,
+//   removeContactSuccess,
+//   removeContactError,
+// };
 
-export default actions;
-
+// export default actions;
+/**-------------------------------------------------------------------- */
 // export const addContact = createAction('contact/add', data => {
 //   return {
 //     payload: {

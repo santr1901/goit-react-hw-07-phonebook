@@ -12,11 +12,11 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import contactsReducer from './contactItems/items-reduser';
+import contactsReduser from './contactItems/contacts-slice';
 import filterReducer from './filter/filter-reduser';
 
 const rootReducer = combineReducers({
-  items: contactsReducer,
+  items: contactsReduser,
   filter: filterReducer,
 });
 
