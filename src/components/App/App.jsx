@@ -5,7 +5,6 @@ import css from './App.module.css';
 import Form from '../Form/Form';
 import Filter from '../Filter/Filter';
 import ContactList from '../ContactList/ContactList';
-
 // import { addContact, removeContact } from 'redux/contactItems/items-actions';
 import {
   fetchContacts,
