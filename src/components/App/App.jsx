@@ -44,7 +44,7 @@ const App = () => {
       contact.name.toLocaleLowerCase().includes(normalizeFilter)
     );
   };
-
+  console.log(newContacts.length);
   return (
     <div className={css.phonebook}>
       <h1>Phonebook</h1>
@@ -52,10 +52,12 @@ const App = () => {
       <div>
         <h2>Contacts</h2>
         <Filter filter={filter} onChangeFilter={onSetFilter} />
-        <ContactList
-          contacts={getFilterContact()}
-          removeContact={onRemoveContact}
-        />
+        {newContacts.length > 0 && (
+          <ContactList
+            contacts={getFilterContact()}
+            removeContact={onRemoveContact}
+          />
+        )}
       </div>
     </div>
   );
