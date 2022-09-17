@@ -27,8 +27,8 @@ export const addContact = createAsyncThunk(
   },
   {
     condition: (data, { getState }) => {
-      const { items } = getState();
-      if (items.items.find(contact => contact.name === data.name)) {
+      const { contacts } = getState();
+      if (contacts.items.find(contact => contact.name === data.name)) {
         alert(`${data.name} is already in contact list`);
         return false;
       }
