@@ -16,9 +16,9 @@ import { setFilter } from 'redux/filter/filter-actions';
 
 const App = () => {
   const dispatch = useDispatch();
-  const newContacts = useSelector(store => store.items.items);
+  const newContacts = useSelector(store => store.contacts.items);
   const filter = useSelector(store => store.filter);
-
+  console.log(newContacts);
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
@@ -44,7 +44,7 @@ const App = () => {
       contact.name.toLocaleLowerCase().includes(normalizeFilter)
     );
   };
-  console.log(newContacts.length);
+
   return (
     <div className={css.phonebook}>
       <h1>Phonebook</h1>
@@ -52,12 +52,11 @@ const App = () => {
       <div>
         <h2>Contacts</h2>
         <Filter filter={filter} onChangeFilter={onSetFilter} />
-        {newContacts.length > 0 && (
-          <ContactList
-            contacts={getFilterContact()}
-            removeContact={onRemoveContact}
-          />
-        )}
+
+        <ContactList
+          contacts={getFilterContact()}
+          removeContact={onRemoveContact}
+        />
       </div>
     </div>
   );
