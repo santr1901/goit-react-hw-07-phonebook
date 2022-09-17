@@ -24,9 +24,6 @@ const App = () => {
   }, [dispatch]);
 
   const onAddContact = payload => {
-    // if (newContacts.find(contact => contact.name === payload.name)) {
-    //   return alert(`${payload.name} is already in contact list`);
-    // }
     dispatch(addContact(payload));
   };
 
