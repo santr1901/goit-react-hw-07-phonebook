@@ -18,7 +18,7 @@ const App = () => {
   const dispatch = useDispatch();
   const newContacts = useSelector(store => store.contacts.items);
   const filter = useSelector(store => store.filter);
-  console.log(newContacts);
+
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
